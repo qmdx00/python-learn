@@ -12,7 +12,6 @@ example of List blow
 
 
 def main():
-
     # 列表创建
     lis_num = [1, 2, 3]
     lis_str = ["iPhone", "iPad", "MacBook"]

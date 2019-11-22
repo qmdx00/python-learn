@@ -12,7 +12,6 @@ example of Tuple blow
 
 
 def main():
-
     # 元组创建
     tup_a = ("aa", "bb", 'cc', 'dd')
 
