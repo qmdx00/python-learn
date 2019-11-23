@@ -1,3 +1,4 @@
+# coding=utf-8
 """
 python data type:
     1) Number
