@@ -1,3 +1,4 @@
+# coding=utf-8
 """
 this is python lambda and higher-order function example
 """
