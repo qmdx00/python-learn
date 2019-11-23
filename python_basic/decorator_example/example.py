@@ -20,9 +20,7 @@ def log(text):
         def wrapper(*args, **kw):
             print('%s before %s' % (text, func.__name__))
             return func(*args, **kw)
-
         return wrapper
-
     return decorator
 
 
