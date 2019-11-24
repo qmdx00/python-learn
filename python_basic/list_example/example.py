@@ -52,6 +52,9 @@ def main():
     lis_num.sort(reverse=True)
     print(lis_num)
 
+    # 列表推导式
+    print([i * i for i in range(1, 11) if i % 2 == 0])
+
     # etc ...
 
 
