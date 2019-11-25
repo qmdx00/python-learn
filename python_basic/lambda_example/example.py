@@ -2,7 +2,7 @@
 """
 this is python lambda and higher-order function example
 """
-from functools import reduce, wraps
+from functools import reduce
 
 # lambda
 
