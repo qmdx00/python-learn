@@ -17,12 +17,11 @@ class Example(Spider):
 
     def parse(self, response):
         """ 获取所有github仓库信息 """
-        repos = []
         lis = response.css("div#user-repositories-list li")
         for li in lis:
             repo = Repository()
             repo['url'] = self.base + li.css('a::attr(href)')[0].extract()
             repo['name'] = li.css('a::text')[0].extract().strip().replace("\n", "")
-            print(repo)
-            repos.append(repo)
-# Todo 继续获取仓库描述信息和 Readme.md 文件
+            yield repo
+
+# scrapy runspider example.py -o github.json -t json
