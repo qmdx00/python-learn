@@ -11,6 +11,7 @@ The 7 Steps of Machine Learning:
 
 """
 import tensorflow as tf
+from matplotlib import pyplot as plt
 
 
 def main():
@@ -18,6 +19,19 @@ def main():
 
     (x_train, y_train), (x_test, y_test) = mnist.load_data()
     x_train, x_test = x_train / 255.0, x_test / 255.0
+
+    print(x_train.shape, y_train.shape)
+    print(x_test.shape, y_test.shape)
+
+    for i in range(9):
+        plt.subplot(3, 3, i + 1)
+        plt.tight_layout()
+        plt.imshow(x_train[i], cmap='Greys')
+        plt.title("Label: {}".format(y_train[i]))
+        plt.xticks([])
+        plt.yticks([])
+
+    plt.show()
 
     model = tf.keras.models.Sequential([
         tf.keras.layers.Flatten(input_shape=(28, 28)),
