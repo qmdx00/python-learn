@@ -1,4 +1,3 @@
-import pandas as pd
 from pandas import Series, DataFrame
 
 """
@@ -34,4 +33,3 @@ print(list(frame['city']))
 # 增加新的列
 frame['cap'] = (frame.score >= 1)
 print(frame.T)
-
