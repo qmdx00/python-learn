@@ -6,12 +6,14 @@ from ..items import BookItem
 
 
 def parse_chapter(response: HtmlResponse):
-    title = response.xpath("//div[@class='bookname']/h1//text()").getall()
-    title_index = re.findall("\\d+", "".join(title).strip())[0]
+    title = response.xpath("//div[@class='bookname']/h1//text()").getall()[0].split()
     text = response.xpath("//div[@id='content']//text()").getall()
-    content = "".join([x.strip() for x in text]).strip()
 
-    yield BookItem(title=title_index, content=content)
+    chapter_index = re.findall("\\d+", title[0])[0]
+    chapter_title = title[1]
+    chapter_content = "".join([x.strip() for x in text]).strip()
+
+    yield BookItem(index=chapter_index, title=chapter_title, content=chapter_content)
 
 
 class BookSpider(scrapy.Spider):
